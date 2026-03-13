@@ -1,0 +1,12 @@
+{
+  "mode": "all",
+  "bookmarks": [
+    {
+      "id": "uQxacpj",
+      "label": "kernel_main",
+      "path": "__root__/arch/x86/kernel/kmain.c",
+      "params": "0,10,5,10,16",
+      "subs": []
+    }
+  ]
+}
