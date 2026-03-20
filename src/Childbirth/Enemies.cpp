@@ -1,5 +1,5 @@
-#include "Enemies.h"
-#include "GameManager.h"
+#include "Childbirth/Enemies.h"
+#include "Childbirth/GameManager.h"
 
 // Goblin
 Goblin::Goblin() : Enemy("Goblin", 30, 8) {}

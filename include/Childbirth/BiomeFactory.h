@@ -1,8 +1,8 @@
 #pragma once
 #include <memory>
 #include <string>
-#include "Enemy.h"
-#include "Weapon.h"
+#include "Childbirth/Enemy.h"
+#include "Childbirth/Weapon.h"
 
 class BiomeFactory
 {

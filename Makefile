@@ -1,7 +1,7 @@
 CPP := g++
-CPPFLAGS := -std=c++20 -g -Wall -Wextra -Wpedantic -Wshadow -Wunused-variable -Wuninitialized -Wconversion -Wdeprecated-declarations -Wformat -Wswitch -Wvla -Wunreachable-code -fsanitize=address
-INCLUDES := -Iinclude -Isrc
+CPPFLAGS := -std=c++20 -g -Wall -Wextra -Wpedantic -Wshadow -Wunused-variable -Wuninitialized -Wconversion -Wdeprecated-declarations -Wformat -Wswitch -Wvla -Wunreachable-code -fsanitize=address -MMD -MP
 
+INCLUDES := -Iinclude -Isrc
 LDFLAGS := -lncurses 
 
 BUILD_DIR := build
@@ -12,10 +12,11 @@ TARGET := $(BUILD_DIR)/main
 SRCS := $(shell find $(SRC_DIR) -name "*.cpp")
 OBJS := $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 
-.PHONY: all build run clean
+DEPS := $(OBJS:.o=.d)
+
+.PHONY: all build run clean rebuild
 
 all: build run
-
 
 build: $(TARGET)
 
@@ -26,6 +27,10 @@ $(TARGET): $(OBJS)
 $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CPP) $(CPPFLAGS) $(INCLUDES) -c $< -o $@
+
+-include $(DEPS)
+
+rebuild: clean build
 
 run: build
 	@$(TARGET)

@@ -1,4 +1,4 @@
-#include "GameManager.h"
+#include "Childbirth/GameManager.h"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ void GameManager::addScore(int points)
 {
 	score_ += points;
 	cout << "[GameManager] " << (points >= 0 ? "+" : "")
-	     << points << " points Score: " << score_ << endl;
+		 << points << " points Score: " << score_ << endl;
 }
 
 void GameManager::endGame()
