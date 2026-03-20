@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include "Enemy.h"
+#include "Childbirth/Enemy.h"
 
 // abstract class
 class EnemyFactory

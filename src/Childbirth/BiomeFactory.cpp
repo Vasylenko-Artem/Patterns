@@ -1,6 +1,6 @@
-#include "BiomeFactory.h"
-#include "Enemies.h"
-#include "Weapon.h"
+#include "Childbirth/BiomeFactory.h"
+#include "Childbirth/Enemies.h"
+#include "Childbirth/Weapon.h"
 #include <stdexcept>
 
 std::unique_ptr<Enemy> ForestBiomeFactory::createEnemy() const

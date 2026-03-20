@@ -1,16 +1,16 @@
-#include "Weapon.h"
+#include "Childbirth/Weapon.h"
 
 //  Weapon base class
 
 Weapon::Weapon(const std::string &name, int power, const std::string &type)
-    : name_(name), power_(power), type_(type) {}
+	: name_(name), power_(power), type_(type) {}
 
 Weapon::~Weapon() = default;
 
 void Weapon::showInfo() const
 {
 	std::cout << "\t[Weapon: " << name_ << "] Type: " << type_
-		  << " | Power: " << power_ << std::endl;
+			  << " | Power: " << power_ << std::endl;
 }
 
 std::string Weapon::getName() const { return name_; }

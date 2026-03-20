@@ -1,5 +1,5 @@
-#include "EnemyFactory.h"
-#include "Enemies.h"
+#include "Childbirth/EnemyFactory.h"
+#include "Childbirth/Enemies.h"
 #include <stdexcept>
 
 // EnemyFactory::spawnEnemy

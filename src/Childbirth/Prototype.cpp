@@ -1,21 +1,21 @@
-#include "Prototype.h"
+#include "Childbirth/Prototype.h"
 
 // HeroPrototype implementation
 
 HeroPrototype::HeroPrototype(
-    const std::string &name,
-    const std::string &heroClass,
-    int hp, int mana,
-    const std::string &armor,
-    const std::string &weapon,
-    const std::vector<std::string> &abilities)
-    : name_(name), class_(heroClass),
-      hp_(hp), mana_(mana),
-      armor_(armor), weapon_(weapon),
-      abilities_(abilities)
+	const std::string &name,
+	const std::string &heroClass,
+	int hp, int mana,
+	const std::string &armor,
+	const std::string &weapon,
+	const std::vector<std::string> &abilities)
+	: name_(name), class_(heroClass),
+	  hp_(hp), mana_(mana),
+	  armor_(armor), weapon_(weapon),
+	  abilities_(abilities)
 {
 	std::cout << "  [HeroPrototype] Original created: "
-		  << name_ << " (" << class_ << ")\n";
+			  << name_ << " (" << class_ << ")\n";
 }
 
 HeroPrototype::HeroPrototype(const HeroPrototype &) = default;
@@ -71,15 +71,15 @@ int HeroPrototype::getHp() const { return hp_; }
 // EnemyPrototype implementation
 
 EnemyPrototype::EnemyPrototype(
-    const std::string &name,
-    const std::string &type,
-    int hp, int damage,
-    const std::string &drop)
-    : name_(name), type_(type),
-      hp_(hp), damage_(damage), drop_(drop)
+	const std::string &name,
+	const std::string &type,
+	int hp, int damage,
+	const std::string &drop)
+	: name_(name), type_(type),
+	  hp_(hp), damage_(damage), drop_(drop)
 {
 	std::cout << "  [EnemyPrototype] Original created: "
-		  << name_ << " (HP:" << hp_ << " DMG:" << damage_ << ")\n";
+			  << name_ << " (HP:" << hp_ << " DMG:" << damage_ << ")\n";
 }
 
 EnemyPrototype::EnemyPrototype(const EnemyPrototype &) = default;
@@ -116,16 +116,16 @@ EnemyPrototype &EnemyPrototype::withDrop(const std::string &drop)
 void EnemyPrototype::attack() const
 {
 	std::cout << "  [" << name_ << "] attacks! Damage: "
-		  << damage_ << std::endl;
+			  << damage_ << std::endl;
 }
 
 void EnemyPrototype::showInfo() const
 {
 	std::cout << "  [" << name_ << "] type:" << type_
-		  << " HP:" << hp_
-		  << " DMG:" << damage_
-		  << " Drop: " << drop_
-		  << std::endl;
+			  << " HP:" << hp_
+			  << " DMG:" << damage_
+			  << " Drop: " << drop_
+			  << std::endl;
 }
 
 std::string EnemyPrototype::getName() const { return name_; }
@@ -135,21 +135,21 @@ int EnemyPrototype::getDamage() const { return damage_; }
 // PrototypeRegistry implementation
 
 void PrototypeRegistry::registerHero(
-    const std::string &key,
-    std::unique_ptr<HeroPrototype> proto)
+	const std::string &key,
+	std::unique_ptr<HeroPrototype> proto)
 {
 	heroes_[key] = std::move(proto);
 }
 
 void PrototypeRegistry::registerEnemy(
-    const std::string &key,
-    std::unique_ptr<EnemyPrototype> proto)
+	const std::string &key,
+	std::unique_ptr<EnemyPrototype> proto)
 {
 	enemies_[key] = std::move(proto);
 }
 
 std::unique_ptr<HeroPrototype> PrototypeRegistry::cloneHero(
-    const std::string &key) const
+	const std::string &key) const
 {
 	auto it = heroes_.find(key);
 
@@ -160,7 +160,7 @@ std::unique_ptr<HeroPrototype> PrototypeRegistry::cloneHero(
 }
 
 std::unique_ptr<EnemyPrototype> PrototypeRegistry::cloneEnemy(
-    const std::string &key) const
+	const std::string &key) const
 {
 	auto it = enemies_.find(key);
 
