@@ -2,6 +2,6 @@
 
 int main()
 {
-	task_03();
+	task_04();
 	return 0;
 }
