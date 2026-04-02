@@ -1,5 +1,5 @@
 CPP := g++
-CPPFLAGS := -std=c++20 -g -Wall -Wextra -Wpedantic -Wshadow -Wunused-variable -Wuninitialized -Wconversion -Wdeprecated-declarations -Wformat -Wswitch -Wvla -Wunreachable-code -fsanitize=address -MMD -MP
+CPPFLAGS := -std=c++20 -g -MMD -MP
 
 INCLUDES := -Iinclude -Isrc
 LDFLAGS := -lncurses 
@@ -28,7 +28,6 @@ $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CPP) $(CPPFLAGS) $(INCLUDES) -c $< -o $@
 
-# 🔥 подключаем зависимости
 -include $(DEPS)
 
 rebuild: clean build
