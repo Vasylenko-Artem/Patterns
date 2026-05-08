@@ -204,7 +204,7 @@ public:
 	}
 };
 
-void task_04()
+int task_04()
 {
 
 	Tasks task;
@@ -287,4 +287,5 @@ void task_04()
 		int largest_even = task.findLargestEvenNumber({1, 2, 3, 4, 5});
 		std::cout << "Largest even number: " << largest_even << std::endl;
 	}
+	return 0;
 }
